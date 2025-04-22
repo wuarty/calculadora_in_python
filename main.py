@@ -5,7 +5,9 @@ while True:
     operador = input(
         'Digite o opeador (Adição(+), Subtraçao(-), Multipllicação(*) e Divisão(/)): ')
 
-    numeros_validos = None
+    numeros_validos = False
+    num_1_float = 0.0
+    num_2_float = 0.0
 
     try:
         num_1_float = float(numero_1)
