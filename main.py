@@ -1,50 +1,61 @@
-while True:
+from PySide6.QtWidgets import QApplication, QMainWindow, QWidget
 
-    numero_1 = input("Digite um número: ")
-    numero_2 = input("Digite um número: ")
-    operador = input(
-        'Digite o opeador (Adição(+), Subtraçao(-), Multipllicação(*) e Divisão(/)): ')
+if __name__ == "__main__":
+    app = QApplication([])
+    main_window = QMainWindow()
+    main_window.setWindowTitle("Calculadora")
+    central_widget = QWidget()
+    main_window.setCentralWidget(central_widget)
+    main_window.show()
+    app.exec()
 
-    numeros_validos = False
-    num_1_float = 0.0
-    num_2_float = 0.0
+# while True:
 
-    try:
-        num_1_float = float(numero_1)
-        num_2_float = float(numero_2)
-        numeros_validos = True
+#     numero_1 = input("Digite um número: ")
+#     numero_2 = input("Digite um número: ")
+#     operador = input(
+#         'Digite o opeador (Adição(+), Subtraçao(-), Multipllicação(*) e Divisão(/)): ')
 
-    except Exception as error:
-        numeros_validos = None
+#     numeros_validos = False
+#     num_1_float = 0.0
+#     num_2_float = 0.0
 
-    if numeros_validos is None:
-        print('Um ou ambos dos números digitados são invalidos. ')
-        continue
+#     try:
+#         num_1_float = float(numero_1)
+#         num_2_float = float(numero_2)
+#         numeros_validos = True
 
-    operadores_permitidos = '+-/*'
+#     except Exception as error:
+#         numeros_validos = None
 
-    if operador not in operadores_permitidos:
-        print('Digite apenas um operador valido')
-        continue
+#     if numeros_validos is None:
+#         print('Um ou ambos dos números digitados são invalidos. ')
+#         continue
 
-    if len(operador) > 1:
-        print('Operador inválido ')
+#     operadores_permitidos = '+-/*'
 
-    print('Realizando calculo...')
-    if operador == '+':
-        resultado = num_1_float + num_2_float
-        print(f'O resultado da soma é: {resultado}')
-    elif operador == '-':
-        resultado = num_1_float - num_2_float
-        print(f'O resultado da subtração é: {resultado}')
-    elif operador == '*':
-        resultado = num_1_float * num_2_float
-        print(f'O resultado da multiplicação é: {resultado}')
-    elif operador == '/':
-        resultado = num_1_float / num_2_float
-        print(f'O resultado da divisão é: {resultado}')
+#     if operador not in operadores_permitidos:
+#         print('Digite apenas um operador valido')
+#         continue
 
-    sair = input('Quer sair? [s]im: ').lower().startswith('s')
+#     if len(operador) > 1:
+#         print('Operador inválido ')
 
-    if sair is True:
-        break
+#     print('Realizando calculo...')
+#     if operador == '+':
+#         resultado = num_1_float + num_2_float
+#         print(f'O resultado da soma é: {resultado}')
+#     elif operador == '-':
+#         resultado = num_1_float - num_2_float
+#         print(f'O resultado da subtração é: {resultado}')
+#     elif operador == '*':
+#         resultado = num_1_float * num_2_float
+#         print(f'O resultado da multiplicação é: {resultado}')
+#     elif operador == '/':
+#         resultado = num_1_float / num_2_float
+#         print(f'O resultado da divisão é: {resultado}')
+
+#     sair = input('Quer sair? [s]im: ').lower().startswith('s')
+
+#     if sair is True:
+    # break
